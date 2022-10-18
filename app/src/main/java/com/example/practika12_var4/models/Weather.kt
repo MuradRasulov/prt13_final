@@ -11,5 +11,6 @@ data class Weather(
     var temperature: String,
     var city: String,
     var pressure: String,
-    var wind_speed: String
+    var wind_speed: String,
+    var typeId: UUID
 )

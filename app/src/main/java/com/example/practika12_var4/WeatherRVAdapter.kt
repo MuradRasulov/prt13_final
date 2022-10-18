@@ -21,12 +21,10 @@ class WeatherRVAdapter(context: Context?, val data: MutableList<Weather>, val da
 
     override fun onBindViewHolder(holder: WeatherViewHolder, position: Int) {
         val item = data[position]
-        val itemType = dataType[position]
         holder.temperatureTextView.text = item.temperature
         holder.cityTextView.text = item.city
         holder.pressureTextView.text = item.pressure
         holder.speedTextView.text = item.wind_speed
-        holder.typeTextView.text = itemType.typeName
     }
 
     override fun getItemCount(): Int = data.size

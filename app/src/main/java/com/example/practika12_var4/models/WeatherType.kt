@@ -9,7 +9,5 @@ import java.util.*
 data class WeatherType(
     @PrimaryKey(autoGenerate = false)
     val id: UUID,
-    @ColumnInfo(index =  true)
-    var weatherId: UUID,
     var typeName: String
 )

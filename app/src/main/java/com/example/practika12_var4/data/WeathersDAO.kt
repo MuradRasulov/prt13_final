@@ -5,6 +5,7 @@ import androidx.room.*
 import com.example.practika12_var4.models.*
 import com.example.practika12_var4.models.WEATHER_TABLE
 import com.example.practika12_var4.models.WEATHER_TYPE_TABLE
+import java.util.UUID
 
 @Dao
 interface WeathersDAO {
@@ -24,6 +25,9 @@ interface WeathersDAO {
     /* Таблица Подробностей*/
     @Query("SELECT * FROM $WEATHER_TYPE_TABLE")
     fun getAllTypesWeather(): LiveData<MutableList<WeatherType>>
+
+    @Query("SELECT id FROM $WEATHER_TYPE_TABLE WHERE typeName = :name")
+    fun getType(name:String):UUID
 
     @Insert
     fun addTypeWeather(weatherType: WeatherType)
